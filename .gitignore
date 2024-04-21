@@ -2,6 +2,7 @@
 # Archivos generados por LaTeX
 *.aux
 *.lof
+*.cut
 *.log
 *.lot
 *.fls
