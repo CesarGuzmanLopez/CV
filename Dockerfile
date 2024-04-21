@@ -1,8 +1,8 @@
-﻿# Usa una imagen base de Debian
+# Usa una imagen base de Debian
 FROM debian:buster-slim
 
 # Instala TeX Live, latexmk, Perl, Bash, Pandoc y dependencias necesarias
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y  \
     texlive-full \
     texlive-fonts-extra \
     texlive-lang-all \
@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     fonts-noto-cjk \
 
     && rm -rf /var/lib/apt/lists/*
-
+ENV MAIN_TEX=
+ENV SHELL=
 # Establece el directorio de trabajo en el contenedor
 WORKDIR /documents
 

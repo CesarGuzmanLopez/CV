@@ -1,12 +1,13 @@
-﻿version: "3.8"
 services:
   latex:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - .:/documents
-    environment:
-      - SHELL=/bin/bash
-      - MAIN_TEX=cv-llt.tex # Asegúrate de que el valor está definido aquí
+      - ./build:/documents/build
+    env_file:
+      - ./.env
     stdin_open: true
     tty: true
     restart: unless-stopped
@@ -14,5 +15,5 @@ services:
       [
         "/bin/bash",
         "-c",
-        "latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build -pvc -view=none $MAIN_TEX",
+        "latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build -pvc -view=none ${MAIN_TEX}",
       ]
