@@ -62,7 +62,6 @@
 *.fls
 *.fdb_latexmk
 *.xdv
-*.spl
 
 # Archivos auxiliares de editor
 *~
