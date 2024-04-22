@@ -8,6 +8,10 @@
 %
 \documentclass[a4paper,skipsamekey,11pt,english]{curve}
 
+
+\makeatletter % <=======================================================
+\def\@continuedname{}
+\makeatother % <========================================================
 % Uncomment to enable Chinese; needs XeLaTeX
 % \usepackage{ctex}
 
@@ -41,15 +45,15 @@
 % \geometry{left=1cm,right=1cm,top=1.5cm,bottom=1.5cm}
 
 % Change the colours if you want
- \definecolor{SwishLineColour}{HTML}{22B8BF}
- \definecolor{MarkerColour}{HTML}{800020}
+ \definecolor{SwishLineColour}{HTML}{3286F7}
+ \definecolor{MarkerColour}{HTML}{14B8F1}
 
 % Change the item prefix marker if you want
 % \prefixmarker{$\diamond$}
 
 %% Photo is only shown if "fullonly" is included
-\includecomment{fullonly}
-% \excludecomment{fullonly}
+%\includecomment{fullonly} //esta tiene la foto
+ \excludecomment{fullonly}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,12 +64,10 @@
 
   \makefield{\faEnvelope[regular]}{\href{mailto:cesar-gerardo@guzman-lopez.com}{\texttt{cesar-gerardo@guzman-lopez.com}}}
   \makefield{\faEnvelope[regular]}{\href{mailto:88-8@live.com.mx}{\texttt{88-8@live.com.mx}}}
-
   %% Next line
-    \makefield{\faGlobe}{\href{https://cesar-gerardo.guzman-lopez.com}{\texttt{cesar-gerardo.guzman-lopez.com }} } 
-    \makefield{\faGithub}{\href{https://github.com/CesarGuzmanLopez/}{\texttt{CesarGuzmanLopez}}}
 
-    % You can use a tabular here if you want to line up the fields.
+    \makefield{\faGlobe}{\href{https://cesar-gerardo.guzman-lopez.com}{\texttt{cesar-gerardo.guzman-lopez.com }} } 
+    \makefield{\faGithub}{\href{https://github.com/CesarGuzmanLopez/}  {\texttt{GitHub:CesarGuzmanLopez}}}
 }
 
 \rightheader{~}
@@ -77,18 +79,17 @@
 \title{Curriculum Vitae}
 
 \begin{document}
-
 \makeheaders[c]
-Estudiante en licenciatura de computacion, me gusta los retos y ayudar a la gente filosofo de closet y amante porfundo de la ciencia, mi mayor sueño es dejar un legado en la humanidad y ayudar a la gente a traves de la tecnologia.
-
-\makerubric{employment}
 \makerubric{education}
 
 \input{publications}
 
+\makerubric{employment}
+
 \makerubric{skills}
 \makerubric{misc}
 
-% \input{referee-full}
+%\makerubric{referee}
+%\input{referee-full}
 
 \end{document}
